@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Is9-Rr-91f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Is9-Rr-91f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,24 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59y-sI-8UN">
-                                <rect key="frame" x="110" y="256" width="155" height="155"/>
-                                <state key="normal" image="RecordButton"/>
-                                <connections>
-                                    <action selector="tapToRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6c-D0-hN0"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwP-Nd-iTb">
-                                <rect key="frame" x="88" y="429" width="200" height="21"/>
+                                <rect key="frame" x="91" y="487" width="193" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="VQM-kW-xXb"/>
+                                    <constraint firstAttribute="height" constant="21" id="tY1-3g-Pnj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z21-8g-jSX">
-                                <rect key="frame" x="138" y="458" width="100" height="100"/>
+                                <rect key="frame" x="137" y="532" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="6Pa-hy-OCW"/>
-                                    <constraint firstAttribute="width" constant="100" id="7kk-Kj-S5w"/>
+                                    <constraint firstAttribute="height" constant="100" id="1FG-9f-hIj"/>
+                                    <constraint firstAttribute="width" constant="100" id="Sce-J6-EKa"/>
                                 </constraints>
                                 <color key="tintColor" red="0.043382205069999999" green="0.189070344" blue="0.16074743869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Stop"/>
@@ -47,17 +44,26 @@
                                     <action selector="stopRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2X-YL-kic"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59y-sI-8UN">
+                                <rect key="frame" x="110" y="324" width="155" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="2kY-gh-obm"/>
+                                    <constraint firstAttribute="width" constant="155" id="WhV-FF-DGp"/>
+                                </constraints>
+                                <state key="normal" image="RecordButton"/>
+                                <connections>
+                                    <action selector="tapToRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6c-D0-hN0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="59y-sI-8UN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3eU-gu-nws"/>
-                            <constraint firstItem="ZwP-Nd-iTb" firstAttribute="centerX" secondItem="59y-sI-8UN" secondAttribute="centerX" id="FRT-Gi-2lO"/>
-                            <constraint firstItem="ZwP-Nd-iTb" firstAttribute="top" secondItem="59y-sI-8UN" secondAttribute="bottom" constant="18" id="SJQ-ty-R25"/>
-                            <constraint firstItem="ZwP-Nd-iTb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="e9p-qc-K2H"/>
-                            <constraint firstItem="59y-sI-8UN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="llO-1q-4k1"/>
-                            <constraint firstItem="ZwP-Nd-iTb" firstAttribute="centerX" secondItem="Z21-8g-jSX" secondAttribute="centerX" id="pn6-Jk-6Jd"/>
-                            <constraint firstItem="Z21-8g-jSX" firstAttribute="top" secondItem="ZwP-Nd-iTb" secondAttribute="bottom" constant="8" symbolic="YES" id="qEZ-cQ-vOX"/>
-                            <constraint firstItem="ZwP-Nd-iTb" firstAttribute="leading" secondItem="59y-sI-8UN" secondAttribute="trailing" constant="-177" id="v3T-Ht-pBL"/>
+                            <constraint firstItem="Z21-8g-jSX" firstAttribute="top" secondItem="ZwP-Nd-iTb" secondAttribute="bottom" constant="24" id="AuV-Jp-KQI"/>
+                            <constraint firstItem="Z21-8g-jSX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cs8-lH-uW9"/>
+                            <constraint firstItem="ZwP-Nd-iTb" firstAttribute="centerX" secondItem="Z21-8g-jSX" secondAttribute="centerX" id="D7P-xe-ya8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z21-8g-jSX" secondAttribute="bottom" constant="35" id="IDf-mu-5qd"/>
+                            <constraint firstItem="ZwP-Nd-iTb" firstAttribute="top" secondItem="59y-sI-8UN" secondAttribute="bottom" constant="8" id="ZWA-TV-aXu"/>
+                            <constraint firstItem="59y-sI-8UN" firstAttribute="centerX" secondItem="ZwP-Nd-iTb" secondAttribute="centerX" id="m6T-zw-7sF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="S9B-Fq-wlT"/>
