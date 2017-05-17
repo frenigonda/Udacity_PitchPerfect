@@ -21,6 +21,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,10 +33,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     @IBAction func tapToRecord(_ sender: Any) {
         
-        recordLabel.text = "Record in progress"
-        recordButton.isEnabled = false
-        stopButton.isEnabled = true
-        
+        setUIforRecordScreen("Record in progress", recordBool: false, stopBool: true)
+       
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
@@ -53,9 +52,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopRecord(_ sender: Any) {
         
-        recordButton.isEnabled = true
-        stopButton.isEnabled = false
-        recordLabel.text = "Tap to record"
+        setUIforRecordScreen("Nap to record", recordBool: true, stopBool: false)
         
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
@@ -64,6 +61,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     // MARK: Other funcs
+    
+    func setUIforRecordScreen(_ recordLabelText: String, recordBool: Bool, stopBool: Bool) {
+        
+        recordButton.isEnabled = recordBool
+        stopButton.isEnabled = stopBool
+        recordLabel.text = recordLabelText
+    }
     
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
